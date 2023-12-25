@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use("/public",express.static("./images"))
 
 
-const url = 'mongodb://127.0.0.1:27017/ecommerce1';
+const url = `${process.env.DATABASE_URL}`;
 mongoose.connect(url)
 .then(()=> {
     console.log("Connected to Database")
